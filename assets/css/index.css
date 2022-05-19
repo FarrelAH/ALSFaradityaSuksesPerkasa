@@ -19,6 +19,7 @@
   text-transform:uppercase;
   display:block;
 }
+
 .text1
 {
   color:black;
@@ -30,6 +31,20 @@
   animation:text 3s 1;
 }
 
+.carousel-item-ongoing {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform .6s ease-in-out;
+}
+
+.carousel-item-ongoing.active {
+  display: block;
+}
 @keyframes text{
   0%{
     color:black;

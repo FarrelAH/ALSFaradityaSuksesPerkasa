@@ -14,11 +14,26 @@ json.forEach(element => {
         <img src="${element.image}" class="d-block w-100" alt="${element.name}">
         <div class="carousel-caption d-md-block">
             <h5>${element.name}</h5>
-            <p>${element.year}</p>
         </div>
     </div>
     `
 });
+
+let isfirst2 = true
+for (let i = 1; i < "16"; i++) {
+    let styles = "carousel-item-ongoing"
+    if(isfirst2 === true) {
+        isfirst2 = false
+        styles += " active"
+    }
+    document.getElementById("ongoingcarousel").innerHTML += `
+    <div class="${styles}">
+        <img src="/assets/ongoing/${i}.jpeg" loading="lazy" class="d-block w-100" >
+    </div>
+    `
+
+}
+
 
 document.querySelector("#next").addEventListener("click",()=>{
     let active = document.querySelector(".carousel-item.active")
@@ -31,6 +46,24 @@ document.querySelector("#next").addEventListener("click",()=>{
 
 document.querySelector("#prev").addEventListener("click",()=>{
     let active = document.querySelector(".carousel-item.active")
+    let prev = active.previousElementSibling
+    if(prev) {
+        active.classList.remove("active")
+        prev.classList.add("active")
+    }
+})
+
+document.querySelector("#next-ongoing").addEventListener("click",()=>{
+    let active = document.querySelector(".carousel-item-ongoing.active")
+    let next = active.nextElementSibling
+    if(next) {
+        active.classList.remove("active")
+        next.classList.add("active")
+    }
+})
+
+document.querySelector("#prev-ongoing").addEventListener("click",()=>{
+    let active = document.querySelector(".carousel-item-ongoing.active")
     let prev = active.previousElementSibling
     if(prev) {
         active.classList.remove("active")
