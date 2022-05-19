@@ -28,7 +28,7 @@ for (let i = 1; i < "16"; i++) {
     }
     document.getElementById("ongoingcarousel").innerHTML += `
     <div class="${styles}">
-        <img src="/assets/ongoing/${i}.jpeg" loading="lazy" class="d-block w-100" >
+        <img src="assets/ongoing/${i}.jpeg" loading="lazy" class="d-block w-100" >
     </div>
     `
 
