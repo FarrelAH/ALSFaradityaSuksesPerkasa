@@ -7,9 +7,6 @@ module.exports = {
     'carousel-item-right'
   ],
   theme: {
-    colors: {
-      'blue-jumbotron': '#003556',
-    },
   },
   variants: {},
   plugins: [require("daisyui")],
